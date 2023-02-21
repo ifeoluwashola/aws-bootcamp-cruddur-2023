@@ -58,7 +58,7 @@ How do you dispose of hardware and other components in an environmentally respon
 How do you assess and plan for the long-term sustainability of your systems?
 # Create an architectural diagram (to the best of your ability) the CI/CD logical pipeline in Lucid Charts
 Here is the link to the architectural design:
-Cruddur Conceptual Design: https://lucid.app/lucidchart31b8adbb-6266-45cb-8bc9-63402fc1f316/edit?invitationId=inv_1196efe5-e79d-498a-9fe3-2a05607a78b8
+Cruddur Conceptual Design: https://lucid.app/lucidchart/31b8adbb-6266-45cb-8bc9-63402fc1f316/edit?viewport_loc=69%2C156%2C1405%2C625%2C0_0&invitationId=inv_1196efe5-e79d-498a-9fe3-2a05607a78b8
 Cruddur Logical Design: https://lucid.app/lucidchart/08e16dda-653e-493f-be2b-1158e49772b1/edit?invitationId=inv_6bd247da-64b6-44a5-82cc-bc33c7cb489d
 
 # Research the technical and service limits of specific services and how they could impact the technical path for technical flexibility. 
