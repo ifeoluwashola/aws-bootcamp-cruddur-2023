@@ -24,4 +24,4 @@ I also run a couple of other commands too as an external script
 ### Push and tag a image to DockerHub (they have a free tier)
 I already have a DockerHub account with some images in it, so all what I did was that I created new repository, tagged the frontend and the backend images and pushed it to the repository.
 I also have Docker Desketop on my laptop so I logged in to my dockerhub account from the Docker Desktop and took a screenshot of the images I have on my account:<br>
-![Images on DockerHub](asset/docker-image.png)Push and tag a image to DockerHub (they have a free tier)
+![Images on DockerHub](assets/docker-image.png)
