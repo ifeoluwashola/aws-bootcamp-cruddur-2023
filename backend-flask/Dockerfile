@@ -1,22 +1,22 @@
 # Pulling the base Image
-#FROM python:3.10-slim-buster
+FROM python:3.10-slim-buster
 
 # Setting working Directory
-#WORKDIR /backend-flask
+WORKDIR /backend-flask
 
 #Copy and Install the requirements
-#COPY requirements.txt requirements.txt
-#RUN pip3 install -r requirements.txt
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
 
 # Copy the rest of the project
-#COPY . .
+COPY . .
 
 # Set the Environment Variable
-#ENV FLASK_ENV=development
+ENV FLASK_ENV=development
 
 # Exposing port and running the command inside the container
-#EXPOSE ${PORT}
-#CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=4567"]
+EXPOSE ${PORT}
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=4567"]
 
 # First stage: build the application
 #FROM python:3.9-slim-buster AS builder
