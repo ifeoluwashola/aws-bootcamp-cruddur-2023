@@ -23,9 +23,11 @@ FROM python:3.10-slim-buster AS builder
 
 WORKDIR /backend-flask
 
-# Copy requirements and install dependencies
+# Install dependencies
 COPY requirements.txt .
-RUN pip install --upgrade pip && pip install --user --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && \
+    pip install --user --no-cache-dir -r requirements.txt && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Copy the rest of the project
 COPY . .
@@ -35,13 +37,19 @@ FROM python:3.10-slim-buster
 
 WORKDIR /backend-flask
 
-# Copy the installed dependencies from builder stage
+# Copy from the build stage
 COPY --from=builder /root/.local /root/.local
 COPY --from=builder /backend-flask .
 
 # Set the Environment Variable
+ENV FLASK_APP=myapp:create_app()
 ENV FLASK_ENV=production
+
+# Run as non-root user
+RUN useradd -m flask-user
+USER flask-user
 
 # Exposing port and running the command inside the container
 EXPOSE 4567
-CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0", "--port=4567"]
+CMD [""python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=4567"]
+
