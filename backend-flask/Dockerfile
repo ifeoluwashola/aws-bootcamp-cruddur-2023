@@ -43,7 +43,7 @@ COPY --from=builder /backend-flask .
 
 # Set the Environment Variable
 ENV FLASK_APP=myapp:create_app()
-ENV FLASK_ENV=production
+ENV FLASK_ENV=development
 
 # Run as non-root user
 RUN useradd -m flask-user
@@ -51,5 +51,5 @@ USER flask-user
 
 # Exposing port and running the command inside the container
 EXPOSE 4567
-CMD [""python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=4567"]
+CMD ["python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=4567"]
 
