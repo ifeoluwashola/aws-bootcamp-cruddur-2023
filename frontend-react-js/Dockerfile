@@ -39,7 +39,7 @@ COPY . .
 RUN npm run build
 
 # Use a smaller, production-ready base image
-FROM node:16.18-alpine
+FROM node:16-alpine
 
 # Set the working directory to /app
 WORKDIR /frontend-react-js
